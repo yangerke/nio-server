@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yek.server.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.yek.server.entity.User">
+        <result column="user_id" jdbcType="INTEGER" property="id" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="user_age" jdbcType="INTEGER" property="userAge" />
+    </resultMap>
+
+    <insert id="addUser" parameterType="com.yek.server.entity.User" keyProperty="id" useGeneratedKeys="true">
+        insert into user_test(user_name, user_age) values (#{userName}, #{userAge})
+    </insert>
+
+</mapper>
